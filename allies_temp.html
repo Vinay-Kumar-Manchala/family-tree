@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allies</title>
+    <link rel="icon" href=
+"./images/title1.png"
+        type="image/x-icon" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('./images/pixelcut_ally.jpeg') center/cover no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Ensure top alignment */
+            min-height: 100vh;
+            color: white;
+            text-shadow: 2px 2px 4px black;
+            position: relative;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            background-color: transparent;
+            border-radius: 12px;
+            box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .home-button, .play-button, .about-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-shadow: 1px 1px 2px black;
+            transition: background-color 0.3s ease;
+            margin: 10px; /* Add margin for spacing */
+            width: 100%; /* Full width for better mobile responsiveness */
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .home-button:hover, .play-button:hover, .about-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 4px 4px 8px black;
+            position: relative;
+        }
+
+        .title::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, gold, darkorange);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .branch-dad, .branch-mom {
+            width: 100%;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 3px 3px 6px black;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: inline-block;
+            font-size: 1.5rem;
+            margin: 15px 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            color: white;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        ul li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Media queries for mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            ul li {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+
+            .home-button, .play-button, .about-button {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<audio id="background-audio" autoplay loop>
+    <source src="./images/veera.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+
+<div class="container">
+    <!-- See Family Tree Button -->
+    <button class="home-button" onclick="window.location.href='index.html'">Home</button>
+
+    <!-- Audio Button -->
+    <button class="play-button" onclick="toggleAudio()">BGM⚡. Click here to start/stop</button>
+
+    <div class="title">Allies</div>
+
+    <div class="branches">
+        <div class="branch-dad">
+            <h2>Dad's Side</h2>
+            <ul>
+                <li>Chirumamilla</li>
+                <li>Koduru</li>
+                <li>Cherukuri</li>
+                <li>Pachva</li>
+		<li>Gurajala</li>
+                <li>Gangineni</li>
+		<li>Mallineni</li>
+                <li>Battala</li>
+		<li>Vellanki</li>
+            </ul>
+        </div>
+
+        <div class="branch-mom">
+            <h2>Mom's Side</h2>
+            <ul>
+                <li>Mannem</li>
+                <li>Yaram</li>
+                <li>Nelapati</li>
+                <li>Karnati</li>
+                <li>Vemuri</li>
+                <li>Pamulapati</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    const audio = document.getElementById('background-audio');
+
+    function toggleAudio() {
+        if (audio.paused) {
+            audio.play(); // Play the audio if it's paused
+        } else {
+            audio.pause(); // Pause the audio if it's playing
+        }
+    }
+</script>
+
+</body>
+</html>
